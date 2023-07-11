@@ -38,6 +38,7 @@ const handleScrollAnimation = () => {
 
 //tap to top btn
 const tap_top_btn = document.querySelector(".tap-toTop");
+const header = document.querySelector("header");
 const header_logo = document.querySelector("header .navbar-brand img");
 
 window.onscroll = function () {
@@ -53,9 +54,11 @@ window.onscroll = function () {
 
   //sticky header function
   if (Math.ceil(pos) > 250) {
+    header.classList.add("active");
     header_logo.style.opacity = "1";
     header_logo.src = "img/logo.png";
   } else {
+    header.classList.remove("active");
     header_logo.style.opacity = ".9";
     header_logo.src = "img/logo-white.png";
   }
