@@ -36,12 +36,9 @@ const handleScrollAnimation = () => {
   });
 };
 
-// window.addEventListener("scroll", () => {
-
-// });
-
 //tap to top btn
 const tap_top_btn = document.querySelector(".tap-toTop");
+const header_logo = document.querySelector("header .navbar-brand img");
 
 window.onscroll = function () {
   handleScrollAnimation();
@@ -52,6 +49,15 @@ window.onscroll = function () {
     tap_top_btn.classList.add("active");
   } else {
     tap_top_btn.classList.remove("active");
+  }
+
+  //sticky header function
+  if (Math.ceil(pos) > 250) {
+    header_logo.style.opacity = "1";
+    header_logo.src = "img/logo.png";
+  } else {
+    header_logo.style.opacity = ".9";
+    header_logo.src = "img/logo-white.png";
   }
 };
 

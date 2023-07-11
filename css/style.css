@@ -228,6 +228,13 @@ section {
 header {
   background: #1e0e38;
   border-bottom: 2px solid #182b49cc;
+  position: sticky;
+  top: 0;
+  z-index: 99;
+  transition: 0.3s;
+}
+header.active {
+  transform: rotateX(10deg);
 }
 .navbar-toggler {
   font-size: 1.8rem;
@@ -238,6 +245,7 @@ header {
 }
 .navbar-brand img {
   height: 8rem;
+  transition: 0.3s;
 }
 .navbar-dark .navbar-nav .nav-link {
   padding: 0.5rem 1.5rem;
